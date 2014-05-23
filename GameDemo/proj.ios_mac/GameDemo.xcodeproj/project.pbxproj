@@ -25,6 +25,8 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
+		2E13CD2F192F0D330067D92C /* GameOverScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2E13CD2D192F0D330067D92C /* GameOverScene.cpp */; };
+		2E13CD34192F372A0067D92C /* Marker Felt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E13CD33192F372A0067D92C /* Marker Felt.ttf */; };
 		2E1F516B192D9CC8006B2CA9 /* Player.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E1F5168192D9CC8006B2CA9 /* Player.png */; };
 		2E1F516C192D9CC8006B2CA9 /* Projectile.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E1F5169192D9CC8006B2CA9 /* Projectile.png */; };
 		2E1F516D192D9CC8006B2CA9 /* Target.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E1F516A192D9CC8006B2CA9 /* Target.png */; };
@@ -233,6 +235,9 @@
 		1D6058910D05DD3D006BFB54 /* GameDemo iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GameDemo iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2E13CD2D192F0D330067D92C /* GameOverScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameOverScene.cpp; path = ../Classes/GameOverScene.cpp; sourceTree = "<group>"; };
+		2E13CD2E192F0D330067D92C /* GameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameOverScene.h; path = ../Classes/GameOverScene.h; sourceTree = "<group>"; };
+		2E13CD33192F372A0067D92C /* Marker Felt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Marker Felt.ttf"; sourceTree = "<group>"; };
 		2E1F5168192D9CC8006B2CA9 /* Player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Player.png; sourceTree = "<group>"; };
 		2E1F5169192D9CC8006B2CA9 /* Projectile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Projectile.png; sourceTree = "<group>"; };
 		2E1F516A192D9CC8006B2CA9 /* Target.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Target.png; sourceTree = "<group>"; };
@@ -350,6 +355,8 @@
 				1AFAF8B416D35DE700DB1158 /* AppDelegate.h */,
 				1AFAF8B516D35DE700DB1158 /* HelloWorldScene.cpp */,
 				1AFAF8B616D35DE700DB1158 /* HelloWorldScene.h */,
+				2E13CD2D192F0D330067D92C /* GameOverScene.cpp */,
+				2E13CD2E192F0D330067D92C /* GameOverScene.h */,
 			);
 			name = Classes;
 			path = ../classes;
@@ -417,6 +424,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		2E13CD32192F372A0067D92C /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				2E13CD33192F372A0067D92C /* Marker Felt.ttf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
 		503AE0F517EB97AB00D1A890 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
@@ -465,6 +480,7 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2E13CD32192F372A0067D92C /* fonts */,
 				2E1F5170192DF5AA006B2CA9 /* background-music-aac.caf */,
 				2E1F5171192DF5AA006B2CA9 /* pew-pew-lei.caf */,
 				2E1F5168192D9CC8006B2CA9 /* Player.png */,
@@ -651,6 +667,7 @@
 				2E1F516D192D9CC8006B2CA9 /* Target.png in Resources */,
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
 				2E1F5172192DF5AA006B2CA9 /* background-music-aac.caf in Resources */,
+				2E13CD34192F372A0067D92C /* Marker Felt.ttf in Resources */,
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
 				1AFAF8BD16D35E4900DB1158 /* CloseSelected.png in Resources */,
 				2E1F5173192DF5AA006B2CA9 /* pew-pew-lei.caf in Resources */,
@@ -691,6 +708,7 @@
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
+				2E13CD2F192F0D330067D92C /* GameOverScene.cpp in Sources */,
 				1AFAF8B816D35DE700DB1158 /* HelloWorldScene.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

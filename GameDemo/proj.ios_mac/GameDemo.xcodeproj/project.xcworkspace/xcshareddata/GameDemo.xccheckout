@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>7A4C7AC3-A9E0-42D5-8CCA-000154E11305</string>
+	<key>IDESourceControlProjectName</key>
+	<string>GameDemo</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>38306A3B-CE10-4DF9-8A03-4CE3DB50994A</key>
+		<string>https://github.com/Freecaca/gameDemo.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>GameDemo/proj.ios_mac/GameDemo.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>38306A3B-CE10-4DF9-8A03-4CE3DB50994A</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Freecaca/gameDemo.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>38306A3B-CE10-4DF9-8A03-4CE3DB50994A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>38306A3B-CE10-4DF9-8A03-4CE3DB50994A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>gameDemo</string>
+		</dict>
+	</array>
+</dict>
+</plist>

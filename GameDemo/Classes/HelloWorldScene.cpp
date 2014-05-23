@@ -1,4 +1,6 @@
 #include "HelloWorldScene.h"
+#include "GameOverScene.h"
+
 
 USING_NS_CC;
 
@@ -82,6 +84,12 @@ void HelloWorld::spriteMoveFinished(Ref *pSender)
     Sprite *child =(Sprite *)pSender;
     if (child->getTag()==1) {
         _targets.eraseObject(child);
+        
+        //游戏失败
+        auto gameOverScene =GameOverScene::create();
+        gameOverScene->getLayer()->getLabel()->setString("You Lost!");
+        Director::getInstance()->replaceScene(gameOverScene);
+        
     }else if(child->getTag() ==2) {
         _projectiles.eraseObject(child);
     }
@@ -172,6 +180,16 @@ void HelloWorld::update(float t) {
         for (Sprite *t :targetsToDelete) {
             _targets.eraseObject(t);
             this->removeChild(t);
+            
+            //销毁计数
+            _projectileDestroyed ++;
+            if (_projectileDestroyed >3) {
+                
+                //游戏获胜
+                auto gameOverScene = GameOverScene::create();
+                gameOverScene->getLayer()->getLabel()->setString("You Win!");
+                Director::getInstance()->replaceScene(gameOverScene);
+            }
         }
         
         if (targetsToDelete.size() >0) {
