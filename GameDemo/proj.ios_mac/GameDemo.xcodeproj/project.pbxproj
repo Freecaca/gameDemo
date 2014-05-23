@@ -27,6 +27,8 @@
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		2E13CD2F192F0D330067D92C /* GameOverScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2E13CD2D192F0D330067D92C /* GameOverScene.cpp */; };
 		2E13CD34192F372A0067D92C /* Marker Felt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E13CD33192F372A0067D92C /* Marker Felt.ttf */; };
+		2E13CD3B192F39FD0067D92C /* Player2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E13CD39192F39FD0067D92C /* Player2.png */; };
+		2E13CD3C192F39FD0067D92C /* Projectile2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E13CD3A192F39FD0067D92C /* Projectile2.png */; };
 		2E1F516B192D9CC8006B2CA9 /* Player.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E1F5168192D9CC8006B2CA9 /* Player.png */; };
 		2E1F516C192D9CC8006B2CA9 /* Projectile.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E1F5169192D9CC8006B2CA9 /* Projectile.png */; };
 		2E1F516D192D9CC8006B2CA9 /* Target.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E1F516A192D9CC8006B2CA9 /* Target.png */; };
@@ -238,6 +240,8 @@
 		2E13CD2D192F0D330067D92C /* GameOverScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameOverScene.cpp; path = ../Classes/GameOverScene.cpp; sourceTree = "<group>"; };
 		2E13CD2E192F0D330067D92C /* GameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameOverScene.h; path = ../Classes/GameOverScene.h; sourceTree = "<group>"; };
 		2E13CD33192F372A0067D92C /* Marker Felt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Marker Felt.ttf"; sourceTree = "<group>"; };
+		2E13CD39192F39FD0067D92C /* Player2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Player2.png; sourceTree = "<group>"; };
+		2E13CD3A192F39FD0067D92C /* Projectile2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Projectile2.png; sourceTree = "<group>"; };
 		2E1F5168192D9CC8006B2CA9 /* Player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Player.png; sourceTree = "<group>"; };
 		2E1F5169192D9CC8006B2CA9 /* Projectile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Projectile.png; sourceTree = "<group>"; };
 		2E1F516A192D9CC8006B2CA9 /* Target.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Target.png; sourceTree = "<group>"; };
@@ -489,6 +493,8 @@
 				1AFAF8B916D35E4900DB1158 /* CloseNormal.png */,
 				1AFAF8BA16D35E4900DB1158 /* CloseSelected.png */,
 				1AFAF8BB16D35E4900DB1158 /* HelloWorld.png */,
+				2E13CD39192F39FD0067D92C /* Player2.png */,
+				2E13CD3A192F39FD0067D92C /* Projectile2.png */,
 			);
 			name = Resources;
 			path = ../Resources;
@@ -666,6 +672,7 @@
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
 				2E1F516D192D9CC8006B2CA9 /* Target.png in Resources */,
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
+				2E13CD3C192F39FD0067D92C /* Projectile2.png in Resources */,
 				2E1F5172192DF5AA006B2CA9 /* background-music-aac.caf in Resources */,
 				2E13CD34192F372A0067D92C /* Marker Felt.ttf in Resources */,
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
@@ -683,6 +690,7 @@
 				5087E78417EB970100C73F5D /* Icon-57.png in Resources */,
 				5087E77E17EB970100C73F5D /* Default.png in Resources */,
 				50EF629717ECD46A001EB2F8 /* Icon-58.png in Resources */,
+				2E13CD3B192F39FD0067D92C /* Player2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

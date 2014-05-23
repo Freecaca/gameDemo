@@ -32,11 +32,13 @@ bool HelloWorld::init()
     
     
     Size visibleSize = Director::getInstance()->getVisibleSize();
-//    Point origin = Director::getInstance()->getVisibleOrigin();
+//  Point origin = Director::getInstance()->getVisibleOrigin();
     
-    auto player =Sprite::create("Player.png", Rect(0.0f, 0.0f, 27, 40));
-    player->setPosition(Point(player->getContentSize().width, visibleSize.height/2));
-    this->addChild(player, 0, 101);
+    _nextProjectile =NULL;
+    
+    _player =Sprite::create("Player2.png", Rect(0.0f, 0.0f, 44, 29));
+    _player->setPosition(Point(_player->getContentSize().width/2, visibleSize.height/2));
+    this->addChild(_player, 0, 101);
     
     this->schedule(schedule_selector(HelloWorld::gameLogic), 1.0f);
     
@@ -86,9 +88,9 @@ void HelloWorld::spriteMoveFinished(Ref *pSender)
         _targets.eraseObject(child);
         
         //游戏失败
-        auto gameOverScene =GameOverScene::create();
-        gameOverScene->getLayer()->getLabel()->setString("You Lost!");
-        Director::getInstance()->replaceScene(gameOverScene);
+//        auto gameOverScene =GameOverScene::create();
+//        gameOverScene->getLayer()->getLabel()->setString("You Lost!");
+//        Director::getInstance()->replaceScene(gameOverScene);
         
     }else if(child->getTag() ==2) {
         _projectiles.eraseObject(child);
@@ -117,6 +119,11 @@ void HelloWorld::onEnter()
 
 void HelloWorld::onTouchEnded(Touch *touch, Event *event)
 {
+    if (NULL !=_nextProjectile) {
+        return;
+    }
+    
+    
     //添加音乐
     CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("pew-pew-lei.caf");
     
@@ -125,26 +132,31 @@ void HelloWorld::onTouchEnded(Touch *touch, Event *event)
     //获取触摸位置
     auto touchPoint =touch->getLocation();
     //创建飞镖精灵，并添加到场景中
-    auto projectile =Sprite::create("Projectile.png", Rect(0, 0, 20, 20));
-    projectile->setPosition(Point(30 , visibleSize.height/2));
+    _nextProjectile =Sprite::create("Projectile2.png", Rect(0, 0, 9, 8));
+    _nextProjectile->setPosition(Point(22 , visibleSize.height/2));
     
-    projectile->setTag(2);
-    _projectiles.pushBack(projectile);
+    _nextProjectile->setTag(2);
     
     //设置前往坐标
-    int offX = touchPoint.x - projectile->getPosition().x;
-    int offY = touchPoint.y - projectile->getPosition().y;
+    int offX = touchPoint.x - _nextProjectile->getPosition().x;
+    int offY = touchPoint.y - _nextProjectile->getPosition().y;
+    
+    //设置炮塔旋转角度
+    float angleRadians = atanf((float)offY / (float)offX);
+    float angleDegrees = CC_RADIANS_TO_DEGREES(angleRadians);
+    float cocosAngle = -1 * angleDegrees;
+    float rotateSpeed =0.02/M_PI;
+    float rotateDuration = fabsf(cocosAngle * rotateSpeed);
     
     if (offX <=0)return;
     
-    this ->addChild(projectile, 0);
     float retio =(float)offY / (float)offX;
     
-    int realOffX = visibleSize.width + projectile->getContentSize().width/2 - projectile->getPosition().x;
+    int realOffX = visibleSize.width + _nextProjectile->getContentSize().width/2 - _nextProjectile->getPosition().x;
     int realOffY = retio *realOffX;
     
-    int realX = projectile->getPosition().x + realOffX;
-    int realY = projectile->getPosition().y + realOffY;
+    int realX = _nextProjectile->getPosition().x + realOffX;
+    int realY = _nextProjectile->getPosition().y + realOffY;
     
     auto realPoint =Point(realX, realY);
     
@@ -153,10 +165,21 @@ void HelloWorld::onTouchEnded(Touch *touch, Event *event)
     float speed = 960/1;
     float moveDuration = distance / speed;
     
+    auto playerRotate = RotateTo::create(rotateDuration, cocosAngle);
+    auto playerRotateDone = CallFuncN::create(CC_CALLBACK_0(HelloWorld::finishShoot, this));
+    _player->runAction(Sequence::create(playerRotate, playerRotateDone, NULL));
+    
     auto projectileMove =MoveTo::create(moveDuration, realPoint);
     auto projectiltMoveDone =CallFuncN::create(CC_CALLBACK_1(HelloWorld::spriteMoveFinished, this));
     
-    projectile->runAction(Sequence::create(projectileMove, projectiltMoveDone, NULL));
+    _nextProjectile->runAction(Sequence::create(projectileMove, projectiltMoveDone, NULL));
+}
+
+void HelloWorld::finishShoot() {
+    this->addChild(_nextProjectile, 0);
+    _projectiles.pushBack(_nextProjectile);
+    
+    _nextProjectile =NULL;
 }
 
 #pragma mark - update

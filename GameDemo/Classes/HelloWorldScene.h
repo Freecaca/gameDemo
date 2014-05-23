@@ -12,6 +12,9 @@ private:
     
     int _projectileDestroyed;
     
+    cocos2d::Sprite * _player;
+    cocos2d::Sprite * _nextProjectile;
+    
 public:
     // there's no 'id' in cpp, so we recommend returning the class instance pointer
     static cocos2d::Scene* createScene();
@@ -26,6 +29,8 @@ public:
     
     // selector callback
     void menuCloseCallback(cocos2d::Ref* pSender);
+    
+    void finishShoot();
     
     void spriteMoveFinished(cocos2d::Ref* pSender);
     
